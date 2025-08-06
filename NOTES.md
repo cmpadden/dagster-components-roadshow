@@ -58,6 +58,11 @@ attributes:
       kinds:
         - databricks
         - csv
+
+requirements:
+  env:
+    - DATABRICKS_HOST
+    - DATABRICKS_TOKEN
 ```
 
 Validate
@@ -97,6 +102,11 @@ attributes:
       deps:
         - prepared_accounts
 
+requirements:
+  env:
+    - DATABRICKS_HOST
+    - DATABRICKS_TOKEN
+
 ---
 
 type: dagster_demo.components.databricks_job_component.DatabricksJobComponent
@@ -117,4 +127,9 @@ attributes:
         - csv
       deps:
         - prepared_accounts
+
+requirements:
+  env:
+    - DATABRICKS_HOST
+    - DATABRICKS_TOKEN
 ```
