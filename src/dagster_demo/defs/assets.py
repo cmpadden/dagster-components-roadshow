@@ -1,6 +1,6 @@
 import dagster as dg
 
-ASSET_OWNERS = ["bob@runpod.io"]
+ASSET_OWNERS = ["bob@dagster.io"]
 
 
 @dg.asset(kinds={"s3", "csv"}, owners=ASSET_OWNERS)

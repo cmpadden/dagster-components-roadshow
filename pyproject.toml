@@ -1,5 +1,5 @@
 [project]
-name = "dagster_demo_runpod"
+name = "dagster_demo"
 requires-python = ">=3.9,<3.14"
 version = "0.1.0"
 dependencies = [
@@ -21,9 +21,9 @@ build-backend = "hatchling.build"
 directory_type = "project"
 
 [tool.dg.project]
-root_module = "dagster_demo_runpod"
+root_module = "dagster_demo"
 registry_modules = [
-    "dagster_demo_runpod.components.*",
+    "dagster_demo.components.*",
 ]
 
 

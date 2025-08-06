@@ -35,14 +35,14 @@ class DatabricksJobComponent(dg.Component, dg.Model, dg.Resolvable):
 Next, scaffold the definition instance for that component:
 
 ```bash
-dg scaffold defs dagster_demo_runpod.components.databricks_job_component.DatabricksJobComponent colton_dbx_job
+dg scaffold defs dagster_demo.components.databricks_job_component.DatabricksJobComponent colton_dbx_job
 ```
 
 
 Next, populate the YAML for your new component:
 
 ```yaml
-type: dagster_demo_runpod.components.databricks_job_component.DatabricksJobComponent
+type: dagster_demo.components.databricks_job_component.DatabricksJobComponent
 
 attributes:
   job_id: 1000180891217799
@@ -78,7 +78,7 @@ NOTE: demonstrate a typo, and then perform:
     dg check yaml
 
 ```yaml
-type: dagster_demo_runpod.components.databricks_job_component.DatabricksJobComponent
+type: dagster_demo.components.databricks_job_component.DatabricksJobComponent
 
 attributes:
   job_id: 1000180891217799
@@ -99,7 +99,7 @@ attributes:
 
 ---
 
-type: dagster_demo_runpod.components.databricks_job_component.DatabricksJobComponent
+type: dagster_demo.components.databricks_job_component.DatabricksJobComponent
 
 attributes:
   job_id: 123
