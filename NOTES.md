@@ -1,16 +1,18 @@
 First, create a new component for running Databricks jobs:
 
-    dg scaffold component DatabricksJobComponent
+    dg scaffold component ACMEDatabricksJobComponent
 
 Then, update the component adapting it from our ML engineer's script:
+
+**COPY AND PASTE**
 
 ```python
 import os
 
 import dagster as dg
 
-class DatabricksJobComponent(dg.Component, dg.Model, dg.Resolvable):
-    """Component for running Databricks jobs, and attaching assets"""
+class ACMEDatabricksJobComponent(dg.Component, dg.Model, dg.Resolvable):
+    """Component for running a Databricks job by ID, and attaching assets"""
 
     # added fields here will define params when instantiated in Python, and yaml schema via Resolvable
     job_id: int
@@ -37,14 +39,14 @@ class DatabricksJobComponent(dg.Component, dg.Model, dg.Resolvable):
 Next, scaffold the definition instance for that component:
 
 ```bash
-dg scaffold defs dagster_demo.components.databricks_job_component.DatabricksJobComponent colton_dbx_job
+dg scaffold defs dagster_demo.components.databricks_job_component.ACMEDatabricksJobComponent colton_dbx_job
 ```
 
 
 Next, populate the YAML for your new component:
 
 ```yaml
-type: dagster_demo.components.databricks_job_component.DatabricksJobComponent
+type: dagster_demo.components.databricks_job_component.ACMEDatabricksJobComponent
 
 attributes:
   job_id: 1000180891217799
@@ -85,7 +87,7 @@ NOTE: demonstrate a typo, and then perform:
     dg check yaml
 
 ```yaml
-type: dagster_demo.components.databricks_job_component.DatabricksJobComponent
+type: dagster_demo.components.databricks_job_component.ACMEDatabricksJobComponent
 
 attributes:
   job_id: 1000180891217799
@@ -111,7 +113,7 @@ requirements:
 
 ---
 
-type: dagster_demo.components.databricks_job_component.DatabricksJobComponent
+type: dagster_demo.components.databricks_job_component.ACMEDatabricksJobComponent
 
 attributes:
   job_id: 123
