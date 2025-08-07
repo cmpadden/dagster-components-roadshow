@@ -32,6 +32,8 @@ class DatabricksJobComponent(dg.Component, dg.Model, dg.Resolvable):
         return dg.Definitions(assets=[_multi_asset])
 ```
 
+    dg list components
+
 Next, scaffold the definition instance for that component:
 
 ```bash
