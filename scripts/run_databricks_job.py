@@ -1,8 +1,6 @@
-from collections.abc import Sequence
-import dagster as dg
+import os
 
 from databricks.sdk import WorkspaceClient
-from dataclasses import dataclass
 
 # Access Databricks environment connection details from environment variables
 DATABRICKS_HOST = os.environ.get("DATABRICKS_HOST")
@@ -14,12 +12,12 @@ if __name__ == "__main__":
 
     # The parameters being passed to our notebook job
     job_parameters = {
-        source_file_prefix: "s3://acme-analytics/raw"
-        destination_file_prefix: "s3://acme-analytics/reports"
+        "source_file_prefix": "s3://acme-analytics/raw",
+        "destination_file_prefix": "s3://acme-analytics/reports",
     }
 
     # Run our job and wait for completion using the `databricks-sdk`
-    client = WorkspaceClient(host=self.host, token=self.token)
+    client = WorkspaceClient(host=DATABRICKS_HOST, token=DATABRICKS_TOKEN)
     client.jobs.run_now_and_wait(
         job_id=databricks_job_id,
         job_parameters=job_parameters,
