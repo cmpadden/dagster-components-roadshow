@@ -3,7 +3,7 @@ name = "dagster_demo"
 requires-python = ">=3.9,<3.14"
 version = "0.1.0"
 dependencies = [
-    "dagster==1.11.4",
+    "dagster==1.11.6",
     "databricks-sdk>=0.61.0",
 ]
 

@@ -1,3 +1,7 @@
+    dg list defs
+
+    dg list components
+
 First, create a new component for running Databricks jobs:
 
     dg scaffold component ACMEDatabricksJobComponent
@@ -10,6 +14,8 @@ Then, update the component adapting it from our ML engineer's script:
 import os
 
 import dagster as dg
+
+from databricks.sdk import WorkspaceClient
 
 class ACMEDatabricksJobComponent(dg.Component, dg.Model, dg.Resolvable):
     """Component for running a Databricks job by ID, and attaching assets"""
