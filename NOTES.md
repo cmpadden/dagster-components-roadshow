@@ -44,15 +44,12 @@ class ACMEDatabricksJobComponent(dg.Component, dg.Model, dg.Resolvable):
 
 Next, scaffold the definition instance for that component:
 
-```bash
-dg scaffold defs dagster_demo.components.databricks_job_component.ACMEDatabricksJobComponent colton_dbx_job
-```
-
+    dg scaffold defs dagster_demo.components.acme_databricks_job_component.ACMEDatabricksJobComponent colton_dbx_report
 
 Next, populate the YAML for your new component:
 
 ```yaml
-type: dagster_demo.components.databricks_job_component.ACMEDatabricksJobComponent
+type: dagster_demo.components.acme_databricks_job_component.ACMEDatabricksJobComponent
 
 attributes:
   job_id: 1000180891217799
@@ -68,11 +65,6 @@ attributes:
       kinds:
         - databricks
         - csv
-
-requirements:
-  env:
-    - DATABRICKS_HOST
-    - DATABRICKS_TOKEN
 ```
 
 Validate
@@ -93,7 +85,7 @@ NOTE: demonstrate a typo, and then perform:
     dg check yaml
 
 ```yaml
-type: dagster_demo.components.databricks_job_component.ACMEDatabricksJobComponent
+type: dagster_demo.components.acme_databricks_job_component.ACMEDatabricksJobComponent
 
 attributes:
   job_id: 1000180891217799
@@ -112,14 +104,9 @@ attributes:
       deps:
         - prepared_accounts
 
-requirements:
-  env:
-    - DATABRICKS_HOST
-    - DATABRICKS_TOKEN
-
 ---
 
-type: dagster_demo.components.databricks_job_component.ACMEDatabricksJobComponent
+type: dagster_demo.components.acme_databricks_job_component.ACMEDatabricksJobComponent
 
 attributes:
   job_id: 123
@@ -137,9 +124,4 @@ attributes:
         - csv
       deps:
         - prepared_accounts
-
-requirements:
-  env:
-    - DATABRICKS_HOST
-    - DATABRICKS_TOKEN
 ```
